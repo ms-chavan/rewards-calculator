@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { useFetchTransactions } from "./hooks";
 import { Processing } from "../../components/Processing";
-import { TransactionRow } from "./TransactionRow";
+import { TransactionHeaderRow, TransactionRow } from "./TransactionRow";
 
 export const RewardDetails = () => {
 
     const [monthlyBill, setMonthlyBill] = useState(null);
 
+    // this custom hook gets simulated async reponse using promise
     useFetchTransactions(monthlyBill, setMonthlyBill);
 
     if(monthlyBill) {
         return <>
         <table>
             <tbody>
-                <tr>
-                <th>Month</th>
-                <th>Bill</th>
-                <th>Rewards</th>
-                </tr>            
+            <TransactionHeaderRow />        
+
             {monthlyBill.map((month) => (
             <TransactionRow {...month} />
         ))}            

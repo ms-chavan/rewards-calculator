@@ -1,4 +1,6 @@
 export const getCalculatedRewardPoints = (trx) => {
+    // calculates the reward for each transaction
+
     const expense = trx.expense;
     let eligibleAmountAboveHundred = 0;
     let eligibleSplits = 0;
@@ -16,7 +18,5 @@ export const getCalculatedRewardPoints = (trx) => {
 
     const pointsOverHundredRsSpent = eligibleAmountAboveHundred * 2;
 
-    
-    
     return pointsOverHundredRsSpent + eligibleSplits;
 }
