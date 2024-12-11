@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFetchTransactions } from "./hooks";
 import { Processing } from "../../components/Processing";
+import { TransactionRow } from "./TransactionRow";
 
 export const RewardDetails = () => {
 
@@ -18,11 +19,7 @@ export const RewardDetails = () => {
                 <th>Rewards</th>
                 </tr>            
             {monthlyBill.map((month) => (
-            <tr>
-                <td>{month.monthId}</td>
-                <td>{month.bill}</td>
-                <td>{month.rewardPoints}</td>
-            </tr>
+            <TransactionRow {...month} />
         ))}            
             </tbody>
         </table>

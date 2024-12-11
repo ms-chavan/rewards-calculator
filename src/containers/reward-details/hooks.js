@@ -26,8 +26,6 @@ function generateMonthlyBill(transactions) {
         }
     });
 
-    
-
     monthIndices.forEach((monthIndex) => {
         const monthBill = {
             monthId: monthIndex,
